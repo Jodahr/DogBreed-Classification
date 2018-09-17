@@ -1,0 +1,355 @@
+8177
+2045
+3
+2018-09-09 21:35:54.579686: I tensorflow/core/platform/cpu_feature_guard.cc:140] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2018-09-09 21:35:54.716870: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:898] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2018-09-09 21:35:54.717265: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1212] Found device 0 with properties: 
+name: GeForce GTX 1060 6GB major: 6 minor: 1 memoryClockRate(GHz): 1.7845
+pciBusID: 0000:0c:00.0
+totalMemory: 5.92GiB freeMemory: 5.77GiB
+2018-09-09 21:35:54.717283: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
+2018-09-09 21:35:55.484613: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 5551 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1060 6GB, pci bus id: 0000:0c:00.0, compute capability: 6.1)
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         (None, 250, 250, 3)       0         
+_________________________________________________________________
+block1_conv1 (Conv2D)        (None, 250, 250, 64)      1792      
+_________________________________________________________________
+block1_conv2 (Conv2D)        (None, 250, 250, 64)      36928     
+_________________________________________________________________
+block1_pool (MaxPooling2D)   (None, 125, 125, 64)      0         
+_________________________________________________________________
+block2_conv1 (Conv2D)        (None, 125, 125, 128)     73856     
+_________________________________________________________________
+block2_conv2 (Conv2D)        (None, 125, 125, 128)     147584    
+_________________________________________________________________
+block2_pool (MaxPooling2D)   (None, 62, 62, 128)       0         
+_________________________________________________________________
+block3_conv1 (Conv2D)        (None, 62, 62, 256)       295168    
+_________________________________________________________________
+block3_conv2 (Conv2D)        (None, 62, 62, 256)       590080    
+_________________________________________________________________
+block3_conv3 (Conv2D)        (None, 62, 62, 256)       590080    
+_________________________________________________________________
+block3_pool (MaxPooling2D)   (None, 31, 31, 256)       0         
+_________________________________________________________________
+block4_conv1 (Conv2D)        (None, 31, 31, 512)       1180160   
+_________________________________________________________________
+block4_conv2 (Conv2D)        (None, 31, 31, 512)       2359808   
+_________________________________________________________________
+block4_conv3 (Conv2D)        (None, 31, 31, 512)       2359808   
+_________________________________________________________________
+block4_pool (MaxPooling2D)   (None, 15, 15, 512)       0         
+_________________________________________________________________
+block5_conv1 (Conv2D)        (None, 15, 15, 512)       2359808   
+_________________________________________________________________
+block5_conv2 (Conv2D)        (None, 15, 15, 512)       2359808   
+_________________________________________________________________
+block5_conv3 (Conv2D)        (None, 15, 15, 512)       2359808   
+_________________________________________________________________
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+_________________________________________________________________
+sequential_1 (Sequential)    (None, 120)               6453624   
+=================================================================
+Total params: 21,168,312
+Trainable params: 8,813,432
+Non-trainable params: 12,354,880
+_________________________________________________________________
+None
+Epoch 1/70
+15/15 [==============================] - 34s 2s/step - loss: 5.0596 - categorical_accuracy: 0.0063 - top20_acc: 0.1500 - val_loss: 4.7774 - val_categorical_accuracy: 0.0208 - val_top20_acc: 0.1562
+Epoch 2/70
+15/15 [==============================] - 26s 2s/step - loss: 4.7911 - categorical_accuracy: 0.0063 - top20_acc: 0.1854 - val_loss: 4.7653 - val_categorical_accuracy: 0.0208 - val_top20_acc: 0.2396
+Epoch 3/70
+15/15 [==============================] - 32s 2s/step - loss: 4.7925 - categorical_accuracy: 0.0187 - top20_acc: 0.1979 - val_loss: 4.7658 - val_categorical_accuracy: 0.0312 - val_top20_acc: 0.2604
+Epoch 4/70
+15/15 [==============================] - 29s 2s/step - loss: 4.7381 - categorical_accuracy: 0.0187 - top20_acc: 0.2708 - val_loss: 4.8675 - val_categorical_accuracy: 0.0000e+00 - val_top20_acc: 0.1979
+Epoch 5/70
+15/15 [==============================] - 31s 2s/step - loss: 4.7419 - categorical_accuracy: 0.0125 - top20_acc: 0.2542 - val_loss: 4.7314 - val_categorical_accuracy: 0.0104 - val_top20_acc: 0.2292
+Epoch 6/70
+15/15 [==============================] - 46s 3s/step - loss: 4.7164 - categorical_accuracy: 0.0208 - top20_acc: 0.2562 - val_loss: 4.7879 - val_categorical_accuracy: 0.0000e+00 - val_top20_acc: 0.2188
+Epoch 7/70
+15/15 [==============================] - 28s 2s/step - loss: 4.6975 - categorical_accuracy: 0.0250 - top20_acc: 0.3250 - val_loss: 4.6416 - val_categorical_accuracy: 0.0312 - val_top20_acc: 0.3229
+Epoch 8/70
+15/15 [==============================] - 36s 2s/step - loss: 4.6685 - categorical_accuracy: 0.0354 - top20_acc: 0.3396 - val_loss: 4.5984 - val_categorical_accuracy: 0.0312 - val_top20_acc: 0.3333
+Epoch 9/70
+15/15 [==============================] - 43s 3s/step - loss: 4.6447 - categorical_accuracy: 0.0146 - top20_acc: 0.3458 - val_loss: 4.6176 - val_categorical_accuracy: 0.0833 - val_top20_acc: 0.3646
+Epoch 10/70
+15/15 [==============================] - 30s 2s/step - loss: 4.5271 - categorical_accuracy: 0.0396 - top20_acc: 0.3729 - val_loss: 4.3202 - val_categorical_accuracy: 0.0521 - val_top20_acc: 0.4688
+Epoch 11/70
+15/15 [==============================] - 35s 2s/step - loss: 4.5056 - categorical_accuracy: 0.0396 - top20_acc: 0.3896 - val_loss: 4.4902 - val_categorical_accuracy: 0.0417 - val_top20_acc: 0.3646
+Epoch 12/70
+15/15 [==============================] - 48s 3s/step - loss: 4.4051 - categorical_accuracy: 0.0437 - top20_acc: 0.4521 - val_loss: 4.3665 - val_categorical_accuracy: 0.0625 - val_top20_acc: 0.3646
+Epoch 13/70
+15/15 [==============================] - 29s 2s/step - loss: 4.4514 - categorical_accuracy: 0.0333 - top20_acc: 0.4062 - val_loss: 4.3181 - val_categorical_accuracy: 0.0521 - val_top20_acc: 0.4583
+Epoch 14/70
+15/15 [==============================] - 36s 2s/step - loss: 4.3363 - categorical_accuracy: 0.0375 - top20_acc: 0.4771 - val_loss: 4.2683 - val_categorical_accuracy: 0.0521 - val_top20_acc: 0.4792
+Epoch 15/70
+15/15 [==============================] - 50s 3s/step - loss: 4.3112 - categorical_accuracy: 0.0667 - top20_acc: 0.4854 - val_loss: 4.2594 - val_categorical_accuracy: 0.0417 - val_top20_acc: 0.4896
+Epoch 16/70
+15/15 [==============================] - 29s 2s/step - loss: 4.1849 - categorical_accuracy: 0.0437 - top20_acc: 0.5229 - val_loss: 4.0030 - val_categorical_accuracy: 0.1250 - val_top20_acc: 0.6042
+Epoch 17/70
+15/15 [==============================] - 34s 2s/step - loss: 4.1948 - categorical_accuracy: 0.0667 - top20_acc: 0.5208 - val_loss: 3.9230 - val_categorical_accuracy: 0.1146 - val_top20_acc: 0.6458
+Epoch 18/70
+15/15 [==============================] - 51s 3s/step - loss: 4.1487 - categorical_accuracy: 0.0646 - top20_acc: 0.5813 - val_loss: 3.9615 - val_categorical_accuracy: 0.0833 - val_top20_acc: 0.6354
+Epoch 19/70
+15/15 [==============================] - 29s 2s/step - loss: 4.1002 - categorical_accuracy: 0.0833 - top20_acc: 0.5917 - val_loss: 3.9440 - val_categorical_accuracy: 0.1354 - val_top20_acc: 0.6458
+Epoch 20/70
+15/15 [==============================] - 30s 2s/step - loss: 4.0758 - categorical_accuracy: 0.0750 - top20_acc: 0.5896 - val_loss: 3.7053 - val_categorical_accuracy: 0.1250 - val_top20_acc: 0.7188
+Epoch 21/70
+15/15 [==============================] - 46s 3s/step - loss: 3.9934 - categorical_accuracy: 0.1000 - top20_acc: 0.6417 - val_loss: 3.7873 - val_categorical_accuracy: 0.1250 - val_top20_acc: 0.6771
+Epoch 22/70
+15/15 [==============================] - 32s 2s/step - loss: 4.0217 - categorical_accuracy: 0.0833 - top20_acc: 0.6167 - val_loss: 3.9574 - val_categorical_accuracy: 0.1146 - val_top20_acc: 0.5417
+Epoch 23/70
+15/15 [==============================] - 30s 2s/step - loss: 3.9466 - categorical_accuracy: 0.0896 - top20_acc: 0.6250 - val_loss: 3.7011 - val_categorical_accuracy: 0.0833 - val_top20_acc: 0.7292
+Epoch 24/70
+15/15 [==============================] - 46s 3s/step - loss: 3.9487 - categorical_accuracy: 0.0875 - top20_acc: 0.6125 - val_loss: 3.8392 - val_categorical_accuracy: 0.1042 - val_top20_acc: 0.6458
+Epoch 25/70
+15/15 [==============================] - 29s 2s/step - loss: 3.9024 - categorical_accuracy: 0.0979 - top20_acc: 0.6646 - val_loss: 3.9381 - val_categorical_accuracy: 0.0833 - val_top20_acc: 0.5833
+Epoch 26/70
+15/15 [==============================] - 34s 2s/step - loss: 3.8160 - categorical_accuracy: 0.0938 - top20_acc: 0.6604 - val_loss: 3.8960 - val_categorical_accuracy: 0.1042 - val_top20_acc: 0.6875
+Epoch 27/70
+15/15 [==============================] - 48s 3s/step - loss: 3.8666 - categorical_accuracy: 0.1208 - top20_acc: 0.6625 - val_loss: 3.7119 - val_categorical_accuracy: 0.0938 - val_top20_acc: 0.7188
+Epoch 28/70
+15/15 [==============================] - 29s 2s/step - loss: 3.8042 - categorical_accuracy: 0.1062 - top20_acc: 0.6521 - val_loss: 3.6347 - val_categorical_accuracy: 0.1042 - val_top20_acc: 0.7083
+Epoch 29/70
+15/15 [==============================] - 35s 2s/step - loss: 3.6979 - categorical_accuracy: 0.1333 - top20_acc: 0.7125 - val_loss: 3.4590 - val_categorical_accuracy: 0.1250 - val_top20_acc: 0.7708
+Epoch 30/70
+15/15 [==============================] - 52s 3s/step - loss: 3.7692 - categorical_accuracy: 0.1229 - top20_acc: 0.6917 - val_loss: 3.8146 - val_categorical_accuracy: 0.0833 - val_top20_acc: 0.6250
+Epoch 31/70
+15/15 [==============================] - 29s 2s/step - loss: 3.7595 - categorical_accuracy: 0.1125 - top20_acc: 0.7000 - val_loss: 3.4794 - val_categorical_accuracy: 0.1771 - val_top20_acc: 0.7396
+Epoch 32/70
+15/15 [==============================] - 26s 2s/step - loss: 3.6396 - categorical_accuracy: 0.1375 - top20_acc: 0.7021 - val_loss: 3.5398 - val_categorical_accuracy: 0.1667 - val_top20_acc: 0.6875
+Epoch 33/70
+15/15 [==============================] - 35s 2s/step - loss: 3.6117 - categorical_accuracy: 0.1292 - top20_acc: 0.6958 - val_loss: 3.7921 - val_categorical_accuracy: 0.1250 - val_top20_acc: 0.6771
+Epoch 34/70
+15/15 [==============================] - 29s 2s/step - loss: 3.6382 - categorical_accuracy: 0.1396 - top20_acc: 0.7312 - val_loss: 3.6151 - val_categorical_accuracy: 0.1875 - val_top20_acc: 0.7396
+Epoch 00034: early stopping
+jodahr@homie ~/PycharmProjects/DogBreeds/src $ ./utils.py
+Using TensorFlow backend.
+[ 1.06479167  0.73433908  0.99050388  0.79610592  1.15112613  1.09209402
+  0.83513072  0.77439394  1.03882114  0.81126984  0.9571161   0.74722222
+  1.10627706  0.83513072  1.00215686  1.00215686  1.18310185  0.93608059
+  1.13577778  0.97911877  0.99050388  1.13577778  1.27139303  1.29065657
+  1.16689498  1.13577778  0.80361635  1.12083333  1.02630522  1.19976526
+  0.91594982  1.06479167  1.15112613  0.97911877  1.18310185  0.9571161
+  1.12083333  1.06479167  1.15112613  0.99050388  1.02630522  1.13577778
+  0.74072464  1.29065657  1.18310185  1.21690476  1.23454106  1.13577778
+  1.23454106  1.27139303  1.05164609  1.13577778  0.76741742  1.03882114
+  1.03882114  0.93608059  0.96799242  1.03882114  1.09209402  0.84339934
+  0.9259058   0.81126984  1.05164609  0.99050388  1.03882114  1.27139303
+  1.19976526  1.0140873   0.86043771  0.80361635  0.94648148  1.05164609
+  1.16689498  0.72806268  1.06479167  0.83513072  1.07827004  1.09209402
+  0.93608059  1.02630522  0.89666667  1.09209402  0.97911877  1.23454106
+  0.88732639  1.13577778  0.9259058   0.76741742  0.90620567  1.18310185
+  0.96799242  1.12083333  1.0140873   0.86043771  0.78149847  0.99050388
+  1.03882114  0.6760582   0.96799242  1.12083333  0.76056548  0.89666667
+  0.94648148  1.19976526  1.07827004  1.07827004  1.18310185  1.09209402
+  1.23454106  0.79610592  1.06479167  1.07827004  1.21690476  1.23454106
+  1.00215686  1.07827004  1.05164609  0.89666667  1.03882114  1.03882114]
+[ 1.06479167  0.73433908  0.99050388  0.79610592  1.15112613  1.09209402
+  0.83513072  0.77439394  1.03882114  0.81126984  0.9571161   0.74722222
+  1.10627706  0.83513072  1.00215686  1.00215686  1.18310185  0.93608059
+  1.13577778  0.97911877  0.99050388  1.13577778  1.27139303  1.29065657
+  1.16689498  1.13577778  0.80361635  1.12083333  1.02630522  1.19976526
+  0.91594982  1.06479167  1.15112613  0.97911877  1.18310185  0.9571161
+  1.12083333  1.06479167  1.15112613  0.99050388  1.02630522  1.13577778
+  0.74072464  1.29065657  1.18310185  1.21690476  1.23454106  1.13577778
+  1.23454106  1.27139303  1.05164609  1.13577778  0.76741742  1.03882114
+  1.03882114  0.93608059  0.96799242  1.03882114  1.09209402  0.84339934
+  0.9259058   0.81126984  1.05164609  0.99050388  1.03882114  1.27139303
+  1.19976526  1.0140873   0.86043771  0.80361635  0.94648148  1.05164609
+  1.16689498  0.72806268  1.06479167  0.83513072  1.07827004  1.09209402
+  0.93608059  1.02630522  0.89666667  1.09209402  0.97911877  1.23454106
+  0.88732639  1.13577778  0.9259058   0.76741742  0.90620567  1.18310185
+  0.96799242  1.12083333  1.0140873   0.86043771  0.78149847  0.99050388
+  1.03882114  0.6760582   0.96799242  1.12083333  0.76056548  0.89666667
+  0.94648148  1.19976526  1.07827004  1.07827004  1.18310185  1.09209402
+  1.23454106  0.79610592  1.06479167  1.07827004  1.21690476  1.23454106
+  1.00215686  1.07827004  1.05164609  0.89666667  1.03882114  1.03882114]
+({0: 'affenpinscher', 1: 'afghan_hound', 2: 'african_hunting_dog', 3: 'airedale', 4: 'american_staffordshire_terrier', 5: 'appenzeller', 6: 'australian_terrier', 7: 'basenji', 8: 'basset', 9: 'beagle', 10: 'bedlington_terrier', 11: 'bernese_mountain_dog', 12: 'black-and-tan_coonhound', 13: 'blenheim_spaniel', 14: 'bloodhound', 15: 'bluetick', 16: 'border_collie', 17: 'border_terrier', 18: 'borzoi', 19: 'boston_bull', 20: 'bouvier_des_flandres', 21: 'boxer', 22: 'brabancon_griffon', 23: 'briard', 24: 'brittany_spaniel', 25: 'bull_mastiff', 26: 'cairn', 27: 'cardigan', 28: 'chesapeake_bay_retriever', 29: 'chihuahua', 30: 'chow', 31: 'clumber', 32: 'cocker_spaniel', 33: 'collie', 34: 'curly-coated_retriever', 35: 'dandie_dinmont', 36: 'dhole', 37: 'dingo', 38: 'doberman', 39: 'english_foxhound', 40: 'english_setter', 41: 'english_springer', 42: 'entlebucher', 43: 'eskimo_dog', 44: 'flat-coated_retriever', 45: 'french_bulldog', 46: 'german_shepherd', 47: 'german_short-haired_pointer', 48: 'giant_schnauzer', 49: 'golden_retriever', 50: 'gordon_setter', 51: 'great_dane', 52: 'great_pyrenees', 53: 'greater_swiss_mountain_dog', 54: 'groenendael', 55: 'ibizan_hound', 56: 'irish_setter', 57: 'irish_terrier', 58: 'irish_water_spaniel', 59: 'irish_wolfhound', 60: 'italian_greyhound', 61: 'japanese_spaniel', 62: 'keeshond', 63: 'kelpie', 64: 'kerry_blue_terrier', 65: 'komondor', 66: 'kuvasz', 67: 'labrador_retriever', 68: 'lakeland_terrier', 69: 'leonberg', 70: 'lhasa', 71: 'malamute', 72: 'malinois', 73: 'maltese_dog', 74: 'mexican_hairless', 75: 'miniature_pinscher', 76: 'miniature_poodle', 77: 'miniature_schnauzer', 78: 'newfoundland', 79: 'norfolk_terrier', 80: 'norwegian_elkhound', 81: 'norwich_terrier', 82: 'old_english_sheepdog', 83: 'otterhound', 84: 'papillon', 85: 'pekinese', 86: 'pembroke', 87: 'pomeranian', 88: 'pug', 89: 'redbone', 90: 'rhodesian_ridgeback', 91: 'rottweiler', 92: 'saint_bernard', 93: 'saluki', 94: 'samoyed', 95: 'schipperke', 96: 'scotch_terrier', 97: 'scottish_deerhound', 98: 'sealyham_terrier', 99: 'shetland_sheepdog', 100: 'shih-tzu', 101: 'siberian_husky', 102: 'silky_terrier', 103: 'soft-coated_wheaten_terrier', 104: 'staffordshire_bullterrier', 105: 'standard_poodle', 106: 'standard_schnauzer', 107: 'sussex_spaniel', 108: 'tibetan_mastiff', 109: 'tibetan_terrier', 110: 'toy_poodle', 111: 'toy_terrier', 112: 'vizsla', 113: 'walker_hound', 114: 'weimaraner', 115: 'welsh_springer_spaniel', 116: 'west_highland_white_terrier', 117: 'whippet', 118: 'wire-haired_fox_terrier', 119: 'yorkshire_terrier'}, {'affenpinscher': 0, 'afghan_hound': 1, 'african_hunting_dog': 2, 'airedale': 3, 'american_staffordshire_terrier': 4, 'appenzeller': 5, 'australian_terrier': 6, 'basenji': 7, 'basset': 8, 'beagle': 9, 'bedlington_terrier': 10, 'bernese_mountain_dog': 11, 'black-and-tan_coonhound': 12, 'blenheim_spaniel': 13, 'bloodhound': 14, 'bluetick': 15, 'border_collie': 16, 'border_terrier': 17, 'borzoi': 18, 'boston_bull': 19, 'bouvier_des_flandres': 20, 'boxer': 21, 'brabancon_griffon': 22, 'briard': 23, 'brittany_spaniel': 24, 'bull_mastiff': 25, 'cairn': 26, 'cardigan': 27, 'chesapeake_bay_retriever': 28, 'chihuahua': 29, 'chow': 30, 'clumber': 31, 'cocker_spaniel': 32, 'collie': 33, 'curly-coated_retriever': 34, 'dandie_dinmont': 35, 'dhole': 36, 'dingo': 37, 'doberman': 38, 'english_foxhound': 39, 'english_setter': 40, 'english_springer': 41, 'entlebucher': 42, 'eskimo_dog': 43, 'flat-coated_retriever': 44, 'french_bulldog': 45, 'german_shepherd': 46, 'german_short-haired_pointer': 47, 'giant_schnauzer': 48, 'golden_retriever': 49, 'gordon_setter': 50, 'great_dane': 51, 'great_pyrenees': 52, 'greater_swiss_mountain_dog': 53, 'groenendael': 54, 'ibizan_hound': 55, 'irish_setter': 56, 'irish_terrier': 57, 'irish_water_spaniel': 58, 'irish_wolfhound': 59, 'italian_greyhound': 60, 'japanese_spaniel': 61, 'keeshond': 62, 'kelpie': 63, 'kerry_blue_terrier': 64, 'komondor': 65, 'kuvasz': 66, 'labrador_retriever': 67, 'lakeland_terrier': 68, 'leonberg': 69, 'lhasa': 70, 'malamute': 71, 'malinois': 72, 'maltese_dog': 73, 'mexican_hairless': 74, 'miniature_pinscher': 75, 'miniature_poodle': 76, 'miniature_schnauzer': 77, 'newfoundland': 78, 'norfolk_terrier': 79, 'norwegian_elkhound': 80, 'norwich_terrier': 81, 'old_english_sheepdog': 82, 'otterhound': 83, 'papillon': 84, 'pekinese': 85, 'pembroke': 86, 'pomeranian': 87, 'pug': 88, 'redbone': 89, 'rhodesian_ridgeback': 90, 'rottweiler': 91, 'saint_bernard': 92, 'saluki': 93, 'samoyed': 94, 'schipperke': 95, 'scotch_terrier': 96, 'scottish_deerhound': 97, 'sealyham_terrier': 98, 'shetland_sheepdog': 99, 'shih-tzu': 100, 'siberian_husky': 101, 'silky_terrier': 102, 'soft-coated_wheaten_terrier': 103, 'staffordshire_bullterrier': 104, 'standard_poodle': 105, 'standard_schnauzer': 106, 'sussex_spaniel': 107, 'tibetan_mastiff': 108, 'tibetan_terrier': 109, 'toy_poodle': 110, 'toy_terrier': 111, 'vizsla': 112, 'walker_hound': 113, 'weimaraner': 114, 'welsh_springer_spaniel': 115, 'west_highland_white_terrier': 116, 'whippet': 117, 'wire-haired_fox_terrier': 118, 'yorkshire_terrier': 119}, array([ 1.06479167,  0.73433908,  0.99050388,  0.79610592,  1.15112613,
+        1.09209402,  0.83513072,  0.77439394,  1.03882114,  0.81126984,
+        0.9571161 ,  0.74722222,  1.10627706,  0.83513072,  1.00215686,
+        1.00215686,  1.18310185,  0.93608059,  1.13577778,  0.97911877,
+        0.99050388,  1.13577778,  1.27139303,  1.29065657,  1.16689498,
+        1.13577778,  0.80361635,  1.12083333,  1.02630522,  1.19976526,
+        0.91594982,  1.06479167,  1.15112613,  0.97911877,  1.18310185,
+        0.9571161 ,  1.12083333,  1.06479167,  1.15112613,  0.99050388,
+        1.02630522,  1.13577778,  0.74072464,  1.29065657,  1.18310185,
+        1.21690476,  1.23454106,  1.13577778,  1.23454106,  1.27139303,
+        1.05164609,  1.13577778,  0.76741742,  1.03882114,  1.03882114,
+        0.93608059,  0.96799242,  1.03882114,  1.09209402,  0.84339934,
+        0.9259058 ,  0.81126984,  1.05164609,  0.99050388,  1.03882114,
+        1.27139303,  1.19976526,  1.0140873 ,  0.86043771,  0.80361635,
+        0.94648148,  1.05164609,  1.16689498,  0.72806268,  1.06479167,
+        0.83513072,  1.07827004,  1.09209402,  0.93608059,  1.02630522,
+        0.89666667,  1.09209402,  0.97911877,  1.23454106,  0.88732639,
+        1.13577778,  0.9259058 ,  0.76741742,  0.90620567,  1.18310185,
+        0.96799242,  1.12083333,  1.0140873 ,  0.86043771,  0.78149847,
+        0.99050388,  1.03882114,  0.6760582 ,  0.96799242,  1.12083333,
+        0.76056548,  0.89666667,  0.94648148,  1.19976526,  1.07827004,
+        1.07827004,  1.18310185,  1.09209402,  1.23454106,  0.79610592,
+        1.06479167,  1.07827004,  1.21690476,  1.23454106,  1.00215686,
+        1.07827004,  1.05164609,  0.89666667,  1.03882114,  1.03882114]))
+[ 1.06479167  0.73433908  0.99050388  0.79610592  1.15112613  1.09209402
+  0.83513072  0.77439394  1.03882114  0.81126984  0.9571161   0.74722222
+  1.10627706  0.83513072  1.00215686  1.00215686  1.18310185  0.93608059
+  1.13577778  0.97911877  0.99050388  1.13577778  1.27139303  1.29065657
+  1.16689498  1.13577778  0.80361635  1.12083333  1.02630522  1.19976526
+  0.91594982  1.06479167  1.15112613  0.97911877  1.18310185  0.9571161
+  1.12083333  1.06479167  1.15112613  0.99050388  1.02630522  1.13577778
+  0.74072464  1.29065657  1.18310185  1.21690476  1.23454106  1.13577778
+  1.23454106  1.27139303  1.05164609  1.13577778  0.76741742  1.03882114
+  1.03882114  0.93608059  0.96799242  1.03882114  1.09209402  0.84339934
+  0.9259058   0.81126984  1.05164609  0.99050388  1.03882114  1.27139303
+  1.19976526  1.0140873   0.86043771  0.80361635  0.94648148  1.05164609
+  1.16689498  0.72806268  1.06479167  0.83513072  1.07827004  1.09209402
+  0.93608059  1.02630522  0.89666667  1.09209402  0.97911877  1.23454106
+  0.88732639  1.13577778  0.9259058   0.76741742  0.90620567  1.18310185
+  0.96799242  1.12083333  1.0140873   0.86043771  0.78149847  0.99050388
+  1.03882114  0.6760582   0.96799242  1.12083333  0.76056548  0.89666667
+  0.94648148  1.19976526  1.07827004  1.07827004  1.18310185  1.09209402
+  1.23454106  0.79610592  1.06479167  1.07827004  1.21690476  1.23454106
+  1.00215686  1.07827004  1.05164609  0.89666667  1.03882114  1.03882114]
+total number of images are 10222
+total number of train images are 8177
+total number of test images are 2045
+
+
+
+
+10222
+2045
+3
+2018-09-09 21:58:38.525330: I tensorflow/core/platform/cpu_feature_guard.cc:140] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2018-09-09 21:58:38.654121: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:898] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2018-09-09 21:58:38.655656: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1212] Found device 0 with properties: 
+name: GeForce GTX 1060 6GB major: 6 minor: 1 memoryClockRate(GHz): 1.7845
+pciBusID: 0000:0c:00.0
+totalMemory: 5.92GiB freeMemory: 5.77GiB
+2018-09-09 21:58:38.655685: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
+2018-09-09 21:58:39.410379: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 5551 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1060 6GB, pci bus id: 0000:0c:00.0, compute capability: 6.1)
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         (None, 250, 250, 3)       0         
+_________________________________________________________________
+block1_conv1 (Conv2D)        (None, 250, 250, 64)      1792      
+_________________________________________________________________
+block1_conv2 (Conv2D)        (None, 250, 250, 64)      36928     
+_________________________________________________________________
+block1_pool (MaxPooling2D)   (None, 125, 125, 64)      0         
+_________________________________________________________________
+block2_conv1 (Conv2D)        (None, 125, 125, 128)     73856     
+_________________________________________________________________
+block2_conv2 (Conv2D)        (None, 125, 125, 128)     147584    
+_________________________________________________________________
+block2_pool (MaxPooling2D)   (None, 62, 62, 128)       0         
+_________________________________________________________________
+block3_conv1 (Conv2D)        (None, 62, 62, 256)       295168    
+_________________________________________________________________
+block3_conv2 (Conv2D)        (None, 62, 62, 256)       590080    
+_________________________________________________________________
+block3_conv3 (Conv2D)        (None, 62, 62, 256)       590080    
+_________________________________________________________________
+block3_pool (MaxPooling2D)   (None, 31, 31, 256)       0         
+_________________________________________________________________
+block4_conv1 (Conv2D)        (None, 31, 31, 512)       1180160   
+_________________________________________________________________
+block4_conv2 (Conv2D)        (None, 31, 31, 512)       2359808   
+_________________________________________________________________
+block4_conv3 (Conv2D)        (None, 31, 31, 512)       2359808   
+_________________________________________________________________
+block4_pool (MaxPooling2D)   (None, 15, 15, 512)       0         
+_________________________________________________________________
+block5_conv1 (Conv2D)        (None, 15, 15, 512)       2359808   
+_________________________________________________________________
+block5_conv2 (Conv2D)        (None, 15, 15, 512)       2359808   
+_________________________________________________________________
+block5_conv3 (Conv2D)        (None, 15, 15, 512)       2359808   
+_________________________________________________________________
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+_________________________________________________________________
+sequential_1 (Sequential)    (None, 120)               6453624   
+=================================================================
+Total params: 21,168,312
+Trainable params: 8,813,432
+Non-trainable params: 12,354,880
+_________________________________________________________________
+None
+Epoch 1/35
+19/19 [==============================] - 32s 2s/step - loss: 5.0833 - categorical_accuracy: 0.0082 - top20_acc: 0.1727
+Epoch 2/35
+19/19 [==============================] - 32s 2s/step - loss: 4.7829 - categorical_accuracy: 0.0115 - top20_acc: 0.1941
+Epoch 3/35
+19/19 [==============================] - 46s 2s/step - loss: 4.7905 - categorical_accuracy: 0.0132 - top20_acc: 0.1793
+Epoch 4/35
+19/19 [==============================] - 34s 2s/step - loss: 4.7624 - categorical_accuracy: 0.0115 - top20_acc: 0.2385
+Epoch 5/35
+19/19 [==============================] - 40s 2s/step - loss: 4.7688 - categorical_accuracy: 0.0132 - top20_acc: 0.2253
+Epoch 6/35
+19/19 [==============================] - 48s 3s/step - loss: 4.7141 - categorical_accuracy: 0.0296 - top20_acc: 0.2944
+Epoch 7/35
+19/19 [==============================] - 35s 2s/step - loss: 4.7120 - categorical_accuracy: 0.0230 - top20_acc: 0.2944
+Epoch 8/35
+19/19 [==============================] - 43s 2s/step - loss: 4.6503 - categorical_accuracy: 0.0280 - top20_acc: 0.3224
+Epoch 9/35
+19/19 [==============================] - 55s 3s/step - loss: 4.6096 - categorical_accuracy: 0.0312 - top20_acc: 0.3536
+Epoch 10/35
+19/19 [==============================] - 36s 2s/step - loss: 4.5469 - categorical_accuracy: 0.0395 - top20_acc: 0.3964
+Epoch 11/35
+19/19 [==============================] - 37s 2s/step - loss: 4.4341 - categorical_accuracy: 0.0526 - top20_acc: 0.4211
+Epoch 12/35
+19/19 [==============================] - 56s 3s/step - loss: 4.3737 - categorical_accuracy: 0.0559 - top20_acc: 0.4836
+Epoch 13/35
+19/19 [==============================] - 38s 2s/step - loss: 4.2898 - categorical_accuracy: 0.0674 - top20_acc: 0.4918
+Epoch 14/35
+19/19 [==============================] - 33s 2s/step - loss: 4.2994 - categorical_accuracy: 0.0773 - top20_acc: 0.4984
+Epoch 15/35
+19/19 [==============================] - 54s 3s/step - loss: 4.1754 - categorical_accuracy: 0.0641 - top20_acc: 0.5493
+Epoch 16/35
+19/19 [==============================] - 44s 2s/step - loss: 4.1282 - categorical_accuracy: 0.0954 - top20_acc: 0.5477
+Epoch 17/35
+19/19 [==============================] - 34s 2s/step - loss: 4.0367 - categorical_accuracy: 0.0905 - top20_acc: 0.5674
+Epoch 18/35
+19/19 [==============================] - 48s 3s/step - loss: 4.0121 - categorical_accuracy: 0.0855 - top20_acc: 0.6168
+Epoch 19/35
+19/19 [==============================] - 50s 3s/step - loss: 3.9728 - categorical_accuracy: 0.0905 - top20_acc: 0.6365
+Epoch 20/35
+19/19 [==============================] - 35s 2s/step - loss: 3.8921 - categorical_accuracy: 0.1151 - top20_acc: 0.6464
+Epoch 21/35
+19/19 [==============================] - 39s 2s/step - loss: 3.9032 - categorical_accuracy: 0.0970 - top20_acc: 0.6250
+Epoch 22/35
+19/19 [==============================] - 57s 3s/step - loss: 3.8874 - categorical_accuracy: 0.1168 - top20_acc: 0.6513
+Epoch 23/35
+19/19 [==============================] - 35s 2s/step - loss: 3.7900 - categorical_accuracy: 0.1447 - top20_acc: 0.6595
+Epoch 24/35
+19/19 [==============================] - 33s 2s/step - loss: 3.6902 - categorical_accuracy: 0.1299 - top20_acc: 0.7056
+Epoch 25/35
+19/19 [==============================] - 59s 3s/step - loss: 3.7209 - categorical_accuracy: 0.1250 - top20_acc: 0.7105
+Epoch 26/35
+19/19 [==============================] - 40s 2s/step - loss: 3.7316 - categorical_accuracy: 0.1332 - top20_acc: 0.6974
+Epoch 27/35
+19/19 [==============================] - 33s 2s/step - loss: 3.6470 - categorical_accuracy: 0.1546 - top20_acc: 0.7188
+Epoch 28/35
+19/19 [==============================] - 51s 3s/step - loss: 3.4458 - categorical_accuracy: 0.1645 - top20_acc: 0.7829
+Epoch 29/35
+19/19 [==============================] - 45s 2s/step - loss: 3.6201 - categorical_accuracy: 0.1513 - top20_acc: 0.7253
+Epoch 30/35
+19/19 [==============================] - 34s 2s/step - loss: 3.6023 - categorical_accuracy: 0.1464 - top20_acc: 0.7253
+Epoch 31/35
+19/19 [==============================] - 45s 2s/step - loss: 3.5118 - categorical_accuracy: 0.1727 - top20_acc: 0.7385
+Epoch 32/35
+19/19 [==============================] - 51s 3s/step - loss: 3.5640 - categorical_accuracy: 0.1316 - top20_acc: 0.7188
+Epoch 33/35
+19/19 [==============================] - 35s 2s/step - loss: 3.5154 - categorical_accuracy: 0.1464 - top20_acc: 0.7533
+Epoch 34/35
+19/19 [==============================] - 38s 2s/step - loss: 3.5991 - categorical_accuracy: 0.1365 - top20_acc: 0.7188
+Epoch 35/35
+19/19 [==============================] - 58s 3s/step - loss: 3.4429 - categorical_accuracy: 0.1612 - top20_acc: 0.7599
+Traceback (most recent call last):
+  File "./utils.py", line 343, in <module>
+    pickle.dump(history.history, f)
+AttributeError: 'History' object has no attribute 'history'
+jodahr@homie ~/PycharmProjects/DogBreeds/src $ 
